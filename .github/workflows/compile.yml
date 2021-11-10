@@ -20,9 +20,6 @@ jobs:
       - name: Compile stock firmware
         run: qmk compile -kb massdrop/ctrl -km default
 
-      - name: Compile endgame firmware
-        run: qmk compile -kb massdrop/ctrl -km endgame
-
       - name: Checkout custom keymap
         uses: actions/checkout@v2
 
