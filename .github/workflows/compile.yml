@@ -19,3 +19,14 @@ jobs:
 
       - name: Compile
         run: qmk compile -kb massdrop/ctrl -km default
+
+      - name: Copy
+        run: mkdir ~/build/ && cp ~/qmk_firmware/massdrop_ctrl_default.bin ~/build/
+
+      - name: Deploy to build branch
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: ~/build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
