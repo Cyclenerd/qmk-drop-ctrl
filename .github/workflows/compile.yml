@@ -13,18 +13,32 @@ jobs:
         run: sudo apt-get install git python3-pip
 
       - name: Install QMK
-        run: python3 -m pip install --user qmk
+        run: |
+          python3 -m pip install --user qmk
+          qmk setup --yes
 
-      - name: Setup
-        run: qmk setup --yes
-
-      - name: Compile
+      - name: Compile stock firmware
         run: qmk compile -kb massdrop/ctrl -km default
 
       - name: Checkout custom keymap
         uses: actions/checkout@v2
 
-      - name: Link
+      - name: Compile custom firmware
         run: |
           pwd
-          ls
+          ln -s ~/work/qmk-drop-ctrl/qmk-drop-ctrl/ ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/nils
+          ls -lah ~/qmk_firmware/keyboards/massdrop/ctrl/keymaps/
+          qmk compile -kb massdrop/ctrl -km nils
+
+      - name: Copy firmware images
+        run: |
+          mkdir build/
+          cp ~/qmk_firmware/massdrop_ctrl_* ./build/
+
+      - name: Deploy to build branch
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: build
+          FOLDER: build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
