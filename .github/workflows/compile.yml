@@ -8,6 +8,7 @@ jobs:
     name: Compile firmware
     runs-on: ubuntu-20.04
     steps:
+
       - name: Install dependencies
         run: sudo apt-get install git python3-pip
 
@@ -20,13 +21,10 @@ jobs:
       - name: Compile
         run: qmk compile -kb massdrop/ctrl -km default
 
-      - name: Copy
-        run: mkdir ~/build/ && cp ~/qmk_firmware/massdrop_ctrl_default.bin ~/build/
+      - name: Checkout custom keymap
+        uses: actions/checkout@v2
 
-      - name: Deploy to build branch
-        uses: s0/git-publish-subdir-action@master
-        env:
-          REPO: self
-          BRANCH: build
-          FOLDER: ~/build
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Link
+        run: |
+          pwd
+          ls
