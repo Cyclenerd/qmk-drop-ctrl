@@ -51,8 +51,8 @@ enum layout_names {
 };
 
 enum tapdance_keycodes {
-    TD_KC_SLCK_ML = 0,  // Tap dance key to switch to mouse layer _ML
-    TD_ALT_KEEPASS,     // Tap dance key to open terminal on KC_LALT double press
+    TD_KC_SLCK_ML = 0, // Tap dance key to switch to mouse layer _ML
+    TD_KDB,            // Tap dance key to open terminal on KC_RCTL double press
 };
 
 enum ctrl_keycodes {
