@@ -1,0 +1,24 @@
+name: "QMK firmware"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  qmk-compile:
+    name: Compile firmware
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install dependencies
+        run: sudo apt-get install git python3-pip
+        
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install QMK
+        run: python3 -m pip install --user qmk
+
+      - name: Setup
+        run: qmk setup
+
+      - name: Compile
+        run: qmk compile -kb massdrop/ctrl -km default
