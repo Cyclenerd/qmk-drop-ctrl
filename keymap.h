@@ -33,7 +33,6 @@
 #define RGB_TIME_OUT_MIN 10
 #define RGB_TIME_OUT_STEP 10
 
-extern bool g_suspend_state;
 extern rgb_config_t rgb_matrix_config;
 bool disable_layer_color;
 
@@ -53,7 +52,7 @@ enum layout_names {
 
 enum tapdance_keycodes {
     TD_KC_SLCK_ML = 0,  // Tap dance key to switch to mouse layer _ML
-    TD_CTRL_TERM,       // Tap dance key to open terminal on LCTRL double press
+    TD_ALT_KEEPASS,     // Tap dance key to open terminal on KC_LALT double press
 };
 
 enum ctrl_keycodes {
