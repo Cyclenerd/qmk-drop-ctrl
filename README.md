@@ -13,7 +13,7 @@ This custom keymap is based on the [Endgame keymap](https://github.com/qmk/qmk_f
 ## Install
 
 With QMK CLI:
-```
+```shell
 # Setting Up Your QMK Environment
 sudo apt install -y git python3-pip
 # Install the QMK CLI
@@ -25,7 +25,7 @@ qmk compile -kb massdrop/ctrl -km default
 ```
 
 Without QMK CLI:
-```
+```shell
 git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
 cd qmk_firmware
 util/qmk_install.sh
@@ -36,7 +36,7 @@ make massdrop/ctrl:default
 
 ## Add Custom Keymap
 
-```
+```shell
 # Clone this repo
 git clone https://github.com/Cyclenerd/qmk-drop-ctrl.git
 # Link custom keymap to QMK firmware
