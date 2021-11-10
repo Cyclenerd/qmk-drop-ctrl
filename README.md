@@ -55,6 +55,8 @@ qmk compile -kb massdrop/ctrl -km nils
 
 ## Flash
 
+Bootmode (`MD_BOOT`): <kbd>FN</kbd> + <kbd>B</kbd>
+
 Flash `massdrop_ctrl_nils.bin` (in root folder `qmk_firmware`) with [QMK Toolbox](https://github.com/qmk/qmk_toolbox).
 
 ![Screenshot: QMK Toolbox](img/qmk_toolbox.png?v1)
