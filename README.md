@@ -1,16 +1,24 @@
 # Massdrop CTRL Keymap
 
-![CTRL](https://massdrop-s3.imgix.net/product-images/massdrop-ntkl-mechanical-keyboard/FP/W6zvr0cTR4KVDY5z8rwp_AI7B6588%20copy%20page.jpg?auto=format&amp;fm=jpg&amp;fit=max&amp;w=700&amp;h=467&amp;dpr=1&amp;q=80)
+![Image: My Massdrop CRTL](img/drop_crtl.png?v1)
 
 The Massdrop CTRL is a TKL mechanical keyboard featuring dual USB-C connectors, an integrated Hi-Speed USB 2.0 hub, and fully customizable RGB backlighting and underlighting.
 
-Keyboard Maintainer: [Massdrop](https://github.com/massdrop)  
-Hardware Supported: Massdrop, Inc. CTRL PCBs utilizing Microchip&#39;s ATSAMD51J18A MCU and USB2422 2-Port USB 2.0 Hi-Speed Hub Controller, and ISSI&#39;s IS31FL3733 LED Drivers.  
-Hardware Availability: [Massdrop CTRL Mechanical Keyboard](https://www.massdrop.com/buy/massdrop-ctrl-mechanical-keyboard)
+* Keyboard Maintainer: [Massdrop](https://github.com/massdrop)  
+* Hardware Supported: Massdrop, Inc. CTRL PCBs utilizing Microchip&#39;s ATSAMD51J18A MCU and USB2422 2-Port USB 2.0 Hi-Speed Hub Controller, and ISSI&#39;s IS31FL3733 LED Drivers.  
+* Hardware Availability: [Massdrop CTRL Mechanical Keyboard](https://www.massdrop.com/buy/massdrop-ctrl-mechanical-keyboard)
 
 This custom keymap is based on the [Endgame keymap](https://github.com/qmk/qmk_firmware/tree/master/keyboards/massdrop/ctrl/keymaps/endgame).
 
-## Install
+
+## Download
+
+[![QMK firmware](https://github.com/Cyclenerd/qmk-drop-ctrl/actions/workflows/compile.yml/badge.svg)](https://github.com/Cyclenerd/qmk-drop-ctrl/actions/workflows/compile.yml)
+
+* [My custom Keymap](https://github.com/Cyclenerd/qmk-drop-ctrl/raw/build/massdrop_ctrl_nils.bin)
+* [Default](https://github.com/Cyclenerd/qmk-drop-ctrl/raw/build/massdrop_ctrl_default.bin)
+
+## Compile
 
 With QMK CLI:
 ```shell
@@ -48,3 +56,5 @@ qmk compile -kb massdrop/ctrl -km nils
 ## Flash
 
 Flash `massdrop_ctrl_nils.bin` (in root folder `qmk_firmware`) with [QMK Toolbox](https://github.com/qmk/qmk_toolbox).
+
+![Screenshot: QMK Toolbox](img/qmk_toolbox.png?v1)
